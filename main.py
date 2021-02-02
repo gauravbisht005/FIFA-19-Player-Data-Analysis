@@ -12,16 +12,11 @@ Player Dataset of FIFA19. This Dataset is available in Kaggle which is a hub of 
 details of players and their stats in the year 2019. This can be used to determine success ratio, ratings, top players 
 etc.""")
 
-
 # read DF
-# @st.cache(allow_output_mutation=True)
-# def load_dataframe():
-df = pd.read_csv("D:/Jarvis/Education/B.Tech/Project 7th Sem/fifa19/data.csv")
-#    return df
-
-
-# df = load_dataframe()
-
+uploaded_file = st.file_uploader("Select FIFA19 Dataset")
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+    st.write(df)
 
 # DataFrame - map                                                South & West are negative(-ve)
 lat_lon_map = [['Argentina', -38.4161, -63.6167], ['Portugal', 39.3339, -8.2245], ['Brazil', -14.2350, -51.9253],

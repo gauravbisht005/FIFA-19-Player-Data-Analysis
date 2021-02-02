@@ -86,7 +86,7 @@ potential_df.columns = ['Potential', 'Count']
 potential_df = potential_df.set_index('Potential')
 
 # data cleaning - dropping columns
-df.drop(['ID', 'Photo', 'Flag', 'Club Logo', 'Special', 'Real Face'], axis=1, inplace=True)
+df.drop(['ID', 'Photo', 'Flag', 'Club Logo', 'Loaned From', 'Special', 'Real Face'], axis=1, inplace=True)
 
 
 # data cleaning - changing type

@@ -98,7 +98,7 @@ df['Value'] = df['Value'].apply(lambda x: value_and_wage_conversion(x))
 df['Wage'] = df['Wage'].apply(lambda x: value_and_wage_conversion(x))
 
 # checkbox - to view DF
-is_check = st.checkbox("See Dataframe")
+is_check = st.checkbox("See Pre-Processed Dataframe")
 if is_check:
     st.write(df)
 

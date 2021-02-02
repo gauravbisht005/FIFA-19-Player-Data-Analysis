@@ -12,6 +12,11 @@ Player Dataset of FIFA19. This Dataset is available in Kaggle which is a hub of 
 details of players and their stats in the year 2019. This can be used to determine success ratio, ratings, top players 
 etc.""")
 
+# button - download dataframe
+if st.button("Show URL to download FIFA19 Dataset"):
+    result = 'https://www.kaggle.com/karangadiya/fifa19'
+    st.write('URL: %s' % result)
+
 # read DF
 uploaded_file = st.file_uploader("Select FIFA19 Dataset")
 if uploaded_file is not None:
@@ -96,11 +101,6 @@ def value_and_wage_conversion(value):
 
 df['Value'] = df['Value'].apply(lambda x: value_and_wage_conversion(x))
 df['Wage'] = df['Wage'].apply(lambda x: value_and_wage_conversion(x))
-
-# button - download dataframe
-if st.button("Show URL to download FIFA19 Dataset"):
-    result = 'https://www.kaggle.com/karangadiya/fifa19'
-    st.write('URL: %s' % result)
 
 # checkbox - to view DF
 is_check = st.checkbox("See Pre-Processed Dataframe")

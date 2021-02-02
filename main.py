@@ -97,6 +97,11 @@ def value_and_wage_conversion(value):
 df['Value'] = df['Value'].apply(lambda x: value_and_wage_conversion(x))
 df['Wage'] = df['Wage'].apply(lambda x: value_and_wage_conversion(x))
 
+# button - download dataframe
+if st.button("Show URL to download FIFA19 Dataset"):
+    result = 'https://www.kaggle.com/karangadiya/fifa19'
+    st.write('URL: %s' % result)
+
 # checkbox - to view DF
 is_check = st.checkbox("See Pre-Processed Dataframe")
 if is_check:

@@ -13,7 +13,7 @@ Champions League, FIFA 19 offers enhanced gameplay features that allows control 
 26th installment in the official FIFA series by EA SPORTS™.""")
 st.subheader("Read before you proceed!")
 st.text("""1. Welcome to FIFA 19 Player Data Analysis.
-2. This is my (Author) first app in streamlit, so kindly be cooperative with the working.
+2. This is my (Author's) first app in streamlit, so kindly be cooperative with it's functionality.
 3. It is designed based on attributes of the below listed dataset ONLY.
 4. Please follow steps as mentioned throughout the app!
 

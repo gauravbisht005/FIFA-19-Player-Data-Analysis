@@ -192,7 +192,7 @@ if heatmap_is_check:
 st.header("Individual/ Multiple player stats:")
 
 # instructions
-st.text("Please select Clubs and 'Name' attribute from the side bar")
+st.text("Please select Club(s) and 'Name' attribute from the side bar")
 
 # sidebar - to select teams/ clubs
 teams = st.sidebar.multiselect("Select Clubs:", df['Club'].unique())

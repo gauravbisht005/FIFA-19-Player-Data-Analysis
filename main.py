@@ -7,9 +7,9 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.title('FIFA 19 Player Data Analysis')
 
-st.markdown("""FIFA19 is the official football game of EA Sports.FIFA 19 is a football simulation video game developed 
+st.markdown("""FIFA19 is the official football game of EA Sports. FIFA 19 is a football simulation video game developed 
 by EA SPorts™. FIFA 19 delivers a champion-caliber experience on and off the pitch. Led by the prestigious UEFA 
-Champions League, FIFA 19 offers enhanced gameplay features that allows control of the pitch in every moment.It is the 
+Champions League, FIFA 19 offers enhanced gameplay features that allows control of the pitch in every moment. It is the 
 26th installment in the official FIFA series by EA SPORTS™.""")
 st.markdown("""FIFA19 is the official football game of EA Sports. Queries in the following project are based on the 
 Player Dataset of FIFA19. This Dataset is available in Kaggle which is a hub of datasets. This dataset consists of 

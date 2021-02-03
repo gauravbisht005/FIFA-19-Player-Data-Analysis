@@ -13,11 +13,12 @@ Champions League, FIFA 19 offers enhanced gameplay features that allows control 
 26th installment in the official FIFA series by EA SPORTS™.""")
 st.subheader("Read before you proceed!")
 st.text("""1. Welcome to FIFA 19 Player Data Analysis.
-2. This is my (Author's) first app in streamlit, so kindly be cooperative with it's working
-3. It is designed based on attributes of the below listed dataset ONLY.
-4. Please follow steps as mentioned throughout the app!
+2. This is my (Author's) first app in streamlit, so kindly be cooperative with its working
+3. Incase of Errors/ Warnings, keep following the instructions.
+4. It is designed based on attributes of the below listed dataset ONLY.
+5. Please follow steps as mentioned throughout the app!
 
-Enjoy - Follow on GitHub - Fork & Star it""")
+Enjoy - Follow on GitHub @gauravbisht005 - Fork & Star my repositories""")
 
 # button - download dataframe
 if st.button("Show URL to download FIFA19 Dataset"):
@@ -121,54 +122,71 @@ st.header("Few insights on data:")
 show_map_is_check = st.checkbox("See Nations of players:")
 if show_map_is_check:
     st.map(map_dataframe)
+    st.text("This map represents the countries of the players in FIFA 19")
 
 # checkbox - to see age distribution of players
 age_is_check = st.checkbox("See age distribution of players:")
 if age_is_check:
     sns.countplot(y='Age', data=df, palette='Set1')
     st.pyplot()
+    st.text("This graph represents the number of players belonging to a particular age")
+    st.text("From this graph, we can infer that the youngest players are 16 years old & the oldest player is 45 years old.")
 
 # checkbox - Number of players by Overall
 overall_chart_is_check = st.checkbox("See No. of Players per Overall:")
 if overall_chart_is_check:
     sns.lineplot(data=overall_df, x='Overall', y='Count')
     st.pyplot()
+    st.text("This graph represents the number of players of a particular Overall")
+    st.text("From the line chart we can infer that most of the players have an Overall ~70")
 
 # checkbox - Number of players by Potential
 potential_is_check = st.checkbox("See No. of Players per Potential:")
 if potential_is_check:
     sns.lineplot(data=potential_df, x='Potential', y="Count")
     st.pyplot()
+    st.text("This graph represents the number of players of a particular Potential")
+    st.text("From the line chart we can infer that most of the players have an Potential ~70")
 
 # checkbox - Preferred Foot
 preferred_foot_is_check = st.checkbox("See Preferred Foot of players:")
 if preferred_foot_is_check:
     sns.countplot('Preferred Foot', data=df)
     st.pyplot()
+    st.text("This graph represents count of preferred foot of the players in FIFA 19")
+    st.text("As we can infer from the graph is, most of the players' preferred foot is right")
 
 # checkbox - Work Rate
 work_rate_is_check = st.checkbox("See Work Rate of players:")
 if work_rate_is_check:
     sns.countplot(y='Work Rate', data=df)
     st.pyplot()
+    st.text("Work rate refers to the extent to which a player contributes to running and chasing in a match while not in possession of the ball")
+    st.text("This graph represents the number of players by group of work rate")
 
 # checkbox - to view body type
 body_type_is_check = st.checkbox("See body type of players:")
 if body_type_is_check:
     sns.countplot('Body Type', data=df)
     st.pyplot()
+    st.text("This graph represents the count of players of particular body type")
+    st.text("We can infer from the bar chart that, while most of the players have normal body type, there are some players who give focus on their body build")
 
 # checkbox - Number of players by position
 position_chart_is_check = st.checkbox("See No. of Players per position:")
 if position_chart_is_check:
     sns.countplot(y='Position', data=df, palette="Set1")
     st.pyplot()
+    st.text("This graph represents the number of players of a particular position")
+    st.text("As wen can see, there are a lot of Strikers followed by Goal Keepers")
 
 # checkbox - heatmap
 heatmap_is_check = st.checkbox("See heatmap of Correlation between Attributes:")
 if heatmap_is_check:
     sns.heatmap(df.corr(), vmin=0, vmax=1)
     st.pyplot()
+    st.text("This is a heatmap, which represents the correlation between attributes of players")
+    st.text("As we can see, there is a strong relation between GK skills")
 
 # Header
 st.header("Individual/ Multiple player stats:")

@@ -8,13 +8,16 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title('FIFA 19 Player Data Analysis')
 
 st.markdown("""FIFA19 is the official football game of EA Sports. FIFA 19 is a football simulation video game developed 
-by EA SPorts™. FIFA 19 delivers a champion-caliber experience on and off the pitch. Led by the prestigious UEFA 
+by EA Sports™. FIFA 19 delivers a champion-caliber experience on and off the pitch. Led by the prestigious UEFA 
 Champions League, FIFA 19 offers enhanced gameplay features that allows control of the pitch in every moment. It is the 
 26th installment in the official FIFA series by EA SPORTS™.""")
-st.markdown("""FIFA19 is the official football game of EA Sports. Queries in the following project are based on the 
-Player Dataset of FIFA19. This Dataset is available in Kaggle which is a hub of datasets. This dataset consists of 
-details of players and their stats in the year 2019. This can be used to determine success ratio, ratings, top players 
-etc.""")
+st.subheader("Read before you proceed!")
+st.text("""1. Welcome to FIFA 19 Player Data Analysis.
+2. This is my (Author) first app in streamlit, so kindly be cooperative with the working.
+3. It is designed based on attributes of the below listed dataset ONLY.
+4. Please follow steps as mentioned throughout the app!
+
+Enjoy - Follow on GitHub - Fork & Star it""")
 
 # button - download dataframe
 if st.button("Show URL to download FIFA19 Dataset"):

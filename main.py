@@ -173,6 +173,9 @@ if heatmap_is_check:
 # Header
 st.header("Individual/ Multiple player stats:")
 
+# instructions
+st.text("Select Clubs and Name attribute first")
+
 # sidebar - to select teams/ clubs
 teams = st.sidebar.multiselect("Select Clubs:", df['Club'].unique())
 # st.write("Clubs Selected: ", teams)
@@ -189,16 +192,20 @@ two_clubs_data = selected_club_data[attributes]
 club_data_is_check = st.checkbox("Attributes of selected clubs:")
 if club_data_is_check:
     st.write(two_clubs_data)
-
+  
 # sidebar - to select players
 selected_players = st.sidebar.multiselect('Select players to compare:', two_clubs_data['Name'].unique())
 # st.write("Players Selected:", selected_players)
+
+# instructions
+st.text("Please select Player(s) from sidebar first")
 
 # checkbox - to view table of selected players
 player_data_is_check = st.checkbox("Data of selected players:")
 if player_data_is_check:
     plot_data = two_clubs_data[(two_clubs_data['Name']).isin(selected_players)]
     st.write(plot_data)
+    st.text("Please select Age Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Age", y="Name", color="Name")
     )

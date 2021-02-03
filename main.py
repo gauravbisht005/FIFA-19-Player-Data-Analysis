@@ -26,7 +26,7 @@ if st.button("Show URL to download FIFA19 Dataset"):
     st.write('URL: %s' % result)
 
 # read DF
-uploaded_file = st.file_uploader("Select FIFA19 Dataset")
+uploaded_file = st.file_uploader("Select FIFA 19 Dataset from your local directory")
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.write(df)
@@ -146,14 +146,14 @@ if potential_is_check:
     sns.lineplot(data=potential_df, x='Potential', y="Count")
     st.pyplot()
     st.text("This graph represents the number of players of a particular Potential")
-    st.text("From the line chart we can infer that most of the players have an Potential ~70")
+    st.text("From the line chart we can infer that most of the players have a Potential ~70")
 
 # checkbox - Preferred Foot
 preferred_foot_is_check = st.checkbox("See Preferred Foot of players:")
 if preferred_foot_is_check:
     sns.countplot('Preferred Foot', data=df)
     st.pyplot()
-    st.text("This graph represents count of preferred foot of the players in FIFA 19")
+    st.text("This graph represents count of preferred foot of the players")
     st.text("As we can infer from the graph is, most of the players' preferred foot is right")
 
 # checkbox - Work Rate
@@ -192,7 +192,7 @@ if heatmap_is_check:
 st.header("Individual/ Multiple player stats:")
 
 # instructions
-st.text("Select Clubs and Name attribute first")
+st.text("Please select Clubs and 'Name' attribute from the side bar")
 
 # sidebar - to select teams/ clubs
 teams = st.sidebar.multiselect("Select Clubs:", df['Club'].unique())
@@ -216,42 +216,49 @@ selected_players = st.sidebar.multiselect('Select players to compare:', two_club
 # st.write("Players Selected:", selected_players)
 
 # instructions
-st.text("Please select Player(s) from sidebar first")
+st.text("Now select Player(s) from sidebar")
 
 # checkbox - to view table of selected players
 player_data_is_check = st.checkbox("Data of selected players:")
 if player_data_is_check:
     plot_data = two_clubs_data[(two_clubs_data['Name']).isin(selected_players)]
     st.write(plot_data)
-    st.text("Please select Age Attribute on sidebar")
+    st.text("Please select 'Age' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Age", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Overall' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Overall", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Potential' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Potential", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Value' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Value", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Wage' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Wage", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Preferred Foot' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Preferred Foot", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Work Rate' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Work Rate", y="Name", color="Name")
     )
     st.write(chart)
+    st.text("Please select 'Body Type' Attribute on sidebar")
     chart = (
         alt.Chart(plot_data, width=670).mark_bar().encode(x="Body Type", y="Name", color="Name")
     )

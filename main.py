@@ -181,12 +181,12 @@ if position_chart_is_check:
     st.text("As wen can see, there are a lot of Strikers followed by Goal Keepers")
 
 # checkbox - heatmap
-# heatmap_is_check = st.checkbox("See heatmap of Correlation between Attributes:")
-# if heatmap_is_check:
-    # sns.heatmap(df.corr(), vmin=0, vmax=1)
-    # st.pyplot()
-    # st.text("This is a heatmap, which represents the correlation between attributes of players")
-    # st.text("As we can see, there is a strong relation between GK skills")
+heatmap_is_check = st.checkbox("See heatmap of Correlation between Attributes:")
+if heatmap_is_check:
+    sns.heatmap(df.corr(), vmin=0, vmax=1)
+    st.pyplot()
+    st.text("This is a heatmap, which represents the correlation between attributes of players")
+    st.text("As we can see, there is a strong relation between GK skills")
 
 # Header
 st.header("Individual/ Multiple player stats:")
